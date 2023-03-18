@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Kumbh Sans", sans-serif;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-image: linear-gradient(
+          to top,
+          hsl(240, 73%, 65%),
+          hsl(273, 75%, 66%)
+        );
+        font-size: 12px;
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        bottom: 2rem;
+        color: #fff;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+        color: #050505;
+      }
+      .container {
+        background-color: hsl(0, 0%, 100%);
+        width: 55rem;
+        height: 28rem;
+        display: flex;
+        border-radius: 2rem;
+        position: relative;
+      }
+
+      .right {
+        min-width: 50%;
+        max-height: 100%;
+        padding: 2rem;
+        position: relative;
+      }
+
+      .left {
+        min-width: 50%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .dpw {
+        position: absolute;
+        width: 25rem;
+        left: -4.5rem;
+        bottom: 5rem;
+        z-index: 1;
+      }
+
+      .dpp {
+        position: absolute;
+        left: -40rem;
+        top: -21rem;
+      }
+
+      .dpb {
+        position: absolute;
+        left: -5.5rem;
+        z-index: 2;
+        animation: updown 2s infinite ease-out;
+      }
+
+      @keyframes updown {
+        0% {
+          bottom: 7rem;
+        }
+
+        50% {
+          bottom: 8rem;
+        }
+
+        100% {
+          bottom: 7rem;
+        }
+      }
+
+      .question {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 75%;
+        cursor: pointer;
+        margin-bottom: 1rem;
+        color: hsl(240, 6%, 50%);
+      }
+
+      h1 {
+        margin-bottom: 2rem;
+      }
+
+      .answer {
+        width: 78%;
+        color: hsl(237, 12%, 33%);
+        cursor: default;
+        display: none;
+      }
+
+      .active .answer {
+        display: block;
+      }
+
+      .active .question {
+        color: #000;
+        font-weight: bold;
+      }
+
+      hr {
+        height: 1px;
+        border: none;
+        background-color: hsla(240, 6%, 50%, 0.322);
+        margin: 1rem 0;
+        width: 80%;
+      }
+
+      .questions {
+        position: absolute;
+        left: 2rem;
+        right: 2rem;
+        top: 25%;
+      }
+
+      .question p:hover {
+        color: #ff7418;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img class="dpb" src="./images/illustration-box-desktop.svg" alt="" />
+      <div class="left">
+        <img
+          class="dpw"
+          src="./images/illustration-woman-online-desktop.svg"
+          alt=""
+        />
+        <img class="dpp" src="./images/bg-pattern-desktop.svg" alt="" />
+      </div>
+      <div class="right">
+        <h1>FAQ</h1>
+        <div class="questions">
+          <div class="qstContainer">
+            <div class="question">
+              <p>How many team members can I invite?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrow" />
+            </div>
+            <div class="answer">
+              <p>
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="qstContainer">
+            <div class="question">
+              <p>What is the maximum file upload size?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrow" />
+            </div>
+            <div class="answer">
+              <p>
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="qstContainer">
+            <div class="question">
+              <p>How do I reset my password?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrow" />
+            </div>
+            <div class="answer">
+              <p>
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="qstContainer">
+            <div class="question">
+              <p>Can I cancel my subscription?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrow" />
+            </div>
+            <div class="answer">
+              <p>
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="qstContainer">
+            <div class="question">
+              <p>Do you provide additional support?</p>
+              <img src="./images/icon-arrow-down.svg" alt="arrow" />
+            </div>
+            <div class="answer">
+              <p>
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/6wki">Shawki Web</a>.
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
